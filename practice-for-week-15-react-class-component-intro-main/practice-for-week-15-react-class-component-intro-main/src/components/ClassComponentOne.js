@@ -4,6 +4,14 @@ import FunctionComponentTwo from './FunctionComponentTwo';
 
 class ClassComponentOne extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: 0,
+            message: ''
+        }
+    }
+
     render () {
     <div className='center'>
       <h1>Class Component One</h1>
@@ -28,4 +36,6 @@ class ClassComponentOne extends Component {
     </div>
     }
 }
+
+export default ClassComponentOne
 
