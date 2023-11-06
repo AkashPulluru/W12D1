@@ -27,29 +27,24 @@ const folders = [
 const App = () =>  {
   const [clock, showClock] = useState(true)
 
-  const toggleClock = () => {showClock({ clock: !clock })};
+  // const toggleClock = () => ({ showClock : !showClock });
+  const toggleClock = () => {
+    debugger
+    clock ? showClock(false) : showClock(true)
+  }
   
   return (
       <div className="widgets">
         <Folder folders={folders} />
         <Weather />
         <ClockToggle toggleClock={toggleClock} />
-        {showClock && <Clock />}
+        {clock && <Clock/>}
         <Autocomplete names={names} />
       </div>
     );
 
 
 }
-
-
-  // {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     showClock: true
-  //   };
-  // }
   
   
 export default App;
